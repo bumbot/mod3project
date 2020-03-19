@@ -1,0 +1,2 @@
+class BattleDataController < ApplicationController
+end
