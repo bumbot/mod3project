@@ -30,9 +30,9 @@ ActiveRecord::Schema.define(version: 2020_03_19_185458) do
   end
 
   create_table "questions", force: :cascade do |t|
-    t.string "prompt"
-    t.string "answer"
-    t.string "testCase"
+    t.string "questionPrompt"
+    t.string "editorText"
+    t.string "finalText"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

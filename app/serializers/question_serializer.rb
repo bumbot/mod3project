@@ -1,5 +1,5 @@
 class QuestionSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :prompt, :answer, :testCase
+  attributes :questionPrompt, :editorText, :finalText
   has_many :battles
 end
