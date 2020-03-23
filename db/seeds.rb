@@ -34,7 +34,7 @@ return [0, 1].")
 
 q2 = Question.create(prompt:"Given two numbers, create a function that will find their sum", answer:"addSum(a, b){return a+b}", testCase:"addSum(1, 2)")
 
-q3 = Question.create(prompt: "Given an array of numbers, find the sum of all the numbers", answer: "addArray(arr){}", testCase: "")
+q3 = Question.create(prompt: "Given an array of numbers, find the sum of all the numbers", answer: "addArray(arr){arr.map(num => {})}", testCase: "")
 
 
 battle1 = Battle.create(user: user1, opponent: user2, win: true, question: q1)
