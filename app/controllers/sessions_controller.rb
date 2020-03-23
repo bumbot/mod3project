@@ -9,14 +9,14 @@ class SessionsController < ApplicationController
             session[:user_id] = user.id
             # render
         else
-            flash[:notice] = "No user found with that username"
+            # flash[:notice] = "No user found with that username"
+            newUser = User.create(username: params[:username], mmr: 0)
+            session[:user_id] = newUser.id
             # render
         end
     end
 
     def logout
         session.clear
-
-        redirect_to
     end
 end
