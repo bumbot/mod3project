@@ -12,4 +12,8 @@ class QuestionsController < ApplicationController
 
         render json: QuestionSerializer.new(question)
     end
+
+    # def create
+    #     question = Question.new()
+    # end
 end

@@ -32,7 +32,9 @@ You may assume that each input would have exactly one solution, and you may not 
 Because nums[0] + nums[1] = 2 + 7 = 9,
 return [0, 1].")
 
-q2 = Question.create(prompt:"", answer:"", testCase:"")
+q2 = Question.create(prompt:"Given two numbers, create a function that will find their sum", answer:"addSum(a, b){return a+b}", testCase:"addSum(1, 2)")
+
+q3 = Question.create(prompt: "Given an array of numbers, find the sum of all the numbers", answer: "addArray(arr){}", testCase: "")
 
 
 battle1 = Battle.create(user: user1, opponent: user2, win: true, question: q1)
