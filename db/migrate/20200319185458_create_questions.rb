@@ -4,6 +4,7 @@ class CreateQuestions < ActiveRecord::Migration[6.0]
       t.string :questionPrompt
       t.string :editorText
       t.string :finalText
+      t.string :difficulty
 
       t.timestamps
     end

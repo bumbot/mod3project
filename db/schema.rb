@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_19_185458) do
+ActiveRecord::Schema.define(version: 2020_03_24_133430) do
 
   create_table "battle_data", force: :cascade do |t|
-    t.string "winnerSolution"
-    t.string "loserSolution"
+    t.string "userSolution"
+    t.string "opponentSolution"
     t.integer "battle_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 2020_03_19_185458) do
     t.integer "opponent_id"
     t.boolean "win"
     t.integer "question_id"
+    t.integer "room_id"
+    t.string "user_time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -33,6 +35,16 @@ ActiveRecord::Schema.define(version: 2020_03_19_185458) do
     t.string "questionPrompt"
     t.string "editorText"
     t.string "finalText"
+    t.string "difficulty"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "rooms", force: :cascade do |t|
+    t.integer "player1_id"
+    t.integer "player2_id"
+    t.integer "room_number"
+    t.integer "state"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
