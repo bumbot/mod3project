@@ -20,7 +20,7 @@ none = User.create(username: "", mmr: 1000)
 
 q1 = Question.create(questionPrompt:"Write a function that finds the sum", editorText: "function findSum(a, b){ \n\n}\n \n \n \n// Don't remove text below\nconsole.log(findSum(1,2) == 3)\nconsole.log(findSum(2,2) == 4)", finalText: "findSum(1,2) == 3 && findSum(2,2) == 4", difficulty: 'easy')
 
-q2 = Question.create(questionPrompt:"Write a function that finds the product", editorText: "function findProduct(a, b){ \n\n}\n \n \n \n// Don't remove text below\nconsole.log(findProduct(1,2) == 2)\nconsole.log(findProduct(2,2) == 4)", finalText: "findSum(1,2) == 2 && findSum(2,2) == 4", difficulty: 'medium')
+q2 = Question.create(questionPrompt:"Write a function that finds the product", editorText: "function findProduct(a, b){ \n\n}\n \n \n \n// Don't remove text below\nconsole.log(findProduct(1,2) == 2)\nconsole.log(findProduct(2,2) == 4)", finalText: "findProduct(1,2) == 2 && findProduct(2,2) == 4", difficulty: 'medium')
 
 
 q3 = Question.create(questionPrompt:"Write a function that finds the difference", editorText: "function findDifference(a, b){ \n\n}\n \n \n \n// Don't remove text below\nconsole.log(findDifference(10,2) == 8)\nconsole.log(findDifference(6,2) == 4)", finalText: "findDifference(10,2) == 8 && findSum(6,2) == 4", difficulty: 'hard')
