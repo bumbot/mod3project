@@ -7,12 +7,11 @@ class SessionsController < ApplicationController
 
         if user
             session[:user_id] = user.id
-            # render
+            render json: user.id
         else
-            # flash[:notice] = "No user found with that username"
             newUser = User.create(username: params[:username], mmr: 0)
             session[:user_id] = newUser.id
-            # render
+            render json: newUser.id
         end
     end
 
