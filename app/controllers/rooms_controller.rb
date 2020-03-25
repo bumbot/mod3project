@@ -1,24 +1,34 @@
 class RoomsController < ApplicationController
     def create
-        room = Room.new(player_1: params[:player_1], player_2: params[:player_2], room_number: params[:room_number], state: params[:state])
+        room = Room.new(player1_id: params[:player1_id], player2_id: params[:player2_id], room_number: params[:room_number], state: params[:state])
 
         if room
             room.save
         end
+
+        render json: room
     end
 
     def update
         room = Room.find(params[:id])
-
-        if room
-            room.update!(player_1: params[:player_1], player_2: params[:player_2], room_number: params[:room_number], state: params[:state])
+        # ! Params isn't sending?
+        # byebug
+        if params[:player2_id] && room
+            room.update(player2_id: params[:player2_id], state: params[:state])
+        else
+            room.update(state: params[:state])
         end
+        # byebug
+        render json: RoomSerializer.new(room)
     end
 
     def show
-        room = Room.find(params[:id])
-
-        render json: RoomSerializer.new(room)
+        room = Room.where(room_number: params[:id])
+        if room.length > 0
+            render json: RoomSerializer.new(room[0])
+        else 
+            render json: {message: "Room Does Not Exist"}
+        end
     end
 
     def index

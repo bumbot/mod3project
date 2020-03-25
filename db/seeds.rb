@@ -11,7 +11,7 @@ Question.destroy_all
 Battle.destroy_all
 Room.destroy_all
 
-
+user = User.create(username: "none", mmr:0, id:0)
 user1 = User.create(username: "Wesley", mmr: 1000)
 user2 = User.create(username: "Paul", mmr: 1000)
 user3 = User.create(username: "Jenny", mmr: 1000)
