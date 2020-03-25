@@ -13,8 +13,8 @@
 ActiveRecord::Schema.define(version: 2020_03_24_133430) do
 
   create_table "battle_data", force: :cascade do |t|
-    t.string "userSolution"
-    t.string "opponentSolution"
+    t.text "userSolution"
+    t.text "opponentSolution"
     t.integer "battle_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
