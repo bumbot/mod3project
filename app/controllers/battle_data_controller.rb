@@ -6,17 +6,19 @@ class BattleDataController < ApplicationController
     end
 
     def show
-        data = BattleDatum.find(params[:id])
+        data = BattleDatum.where(battle_id: params[:id])
 
-        render json: BattleDataSerializer.new(data)
+        render json: BattleDataSerializer.new(data[0])
     end
 
     def create
         data = BattleDatum.new(userSolution: params[:userSolution], opponentSolution: params[:opponentSolution], battle_id: params[:battle_id])
 
         if data
-            data.save
+            savedData = data.save
         end
+        # byebug
+        render json: savedData
     end
 
     def update

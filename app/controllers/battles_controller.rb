@@ -8,17 +8,18 @@ class BattlesController < ApplicationController
     end
 
     def show
-        battle = Battle.find(params[:id])
-
-        render json: BattleSerializer.new(battle)
+        # byebug
+        battle = Battle.where(room_id: params[:id])
+        newBattleData = BattleDatum.where(battle_id: battle[0].id)
+        # byebug
+        render json: newBattleData[0]
     end
 
     def create
-        battle = Battle.new(user: params[:user], opponent: params[:opponent], win: nil, question: params[:question], room: params[:room], user_time: params[:user_time])
-
-        if battle
-            battle.save
-        end
+        battle = Battle.create(room_id: params[:room_id], user_id: params[:user_id], opponent_id: params[:opponent_id], question_id: params[:question_id])
+        battleData = BattleDatum.create(battle_id: battle.id)
+        render json: battleData
+        
     end
 
     def update

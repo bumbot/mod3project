@@ -11,14 +11,12 @@ class RoomsController < ApplicationController
 
     def update
         room = Room.find(params[:id])
-        # ! Params isn't sending?
-        # byebug
         if params[:player2_id] && room
             room.update(player2_id: params[:player2_id], state: params[:state])
         else
             room.update(state: params[:state])
         end
-        # byebug
+
         render json: RoomSerializer.new(room)
     end
 
