@@ -23,7 +23,7 @@ q1 = Question.create(questionPrompt:"Write a function that finds the sum", edito
 q2 = Question.create(questionPrompt:"Write a function that finds the product", editorText: "function findProduct(a, b){ \n\n}\n \n \n \n// Don't remove text below\nconsole.log(findProduct(1,2) == 2)\nconsole.log(findProduct(2,2) == 4)", finalText: "findProduct(1,2) == 2 && findProduct(2,2) == 4", difficulty: 'medium')
 
 
-q3 = Question.create(questionPrompt:"Write a function that finds the difference", editorText: "function findDifference(a, b){ \n\n}\n \n \n \n// Don't remove text below\nconsole.log(findDifference(10,2) == 8)\nconsole.log(findDifference(6,2) == 4)", finalText: "findDifference(10,2) == 8 && findSum(6,2) == 4", difficulty: 'hard')
+q3 = Question.create(questionPrompt:"Write a function that finds the difference", editorText: "function findDifference(a, b){ \n\n}\n \n \n \n// Don't remove text below\nconsole.log(findDifference(10,2) == 8)\nconsole.log(findDifference(6,2) == 4)", finalText: "findDifference(10,2) == 8 && findDifference(6,2) == 4", difficulty: 'hard')
 
 room1 = Room.create(player1: user1, player2: none, state: 1, room_number: 2215)
 room2 = Room.create(player1: user2, player2: none, state: 1, room_number: 4415)

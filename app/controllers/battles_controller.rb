@@ -12,7 +12,7 @@ class BattlesController < ApplicationController
         battle = Battle.where(room_id: params[:id])
         newBattleData = BattleDatum.where(battle_id: battle[0].id)
         # byebug
-        render json: battle
+        render json: battle[0]
     end
 
     def create
@@ -21,6 +21,8 @@ class BattlesController < ApplicationController
         render json: battleData
         
     end
+
+   
 
     def update
         battle = Battle.find(params[:id])

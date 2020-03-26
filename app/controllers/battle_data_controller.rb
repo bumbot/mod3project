@@ -28,7 +28,7 @@ class BattleDataController < ApplicationController
             data.update(userSolution: params[:userSolution]  )
             render json: data
         elsif params[:opponentSolution]
-            data.update(userSolution: params[:opponentSolution]  )
+            data.update(opponentSolution: params[:opponentSolution]  )
             render json: data
         end
         
