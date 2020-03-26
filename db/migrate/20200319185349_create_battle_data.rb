@@ -4,6 +4,9 @@ class CreateBattleData < ActiveRecord::Migration[6.0]
       t.text :userSolution
       t.text :opponentSolution
       t.integer :battle_id
+      t.string :userTime
+      t.string :opponentTime
+
 
       t.timestamps
     end

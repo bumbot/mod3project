@@ -23,13 +23,17 @@ class BattleDataController < ApplicationController
 
     def update
         data = BattleDatum.find(params[:id])
-        # byebug
+       
         if params[:userSolution]
             data.update(userSolution: params[:userSolution]  )
             render json: data
         elsif params[:opponentSolution]
             data.update(opponentSolution: params[:opponentSolution]  )
             render json: data
+        elsif params[:userTime]
+            data.update(userTime: params[:userTime])
+        elsif params[:opponentTime]
+            data.update(opponentTime: params[:opponentTime])
         end
         
     end

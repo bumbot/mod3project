@@ -16,6 +16,8 @@ ActiveRecord::Schema.define(version: 2020_03_24_133430) do
     t.text "userSolution"
     t.text "opponentSolution"
     t.integer "battle_id"
+    t.string "userTime"
+    t.string "opponentTime"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
